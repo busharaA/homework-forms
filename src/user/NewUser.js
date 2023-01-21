@@ -18,6 +18,8 @@ class NewUser extends Component {
 
         this.props.addUser(this.state);
 
+        console.log(this.state);
+
         this.setState({
             name: '',
             years: ''
@@ -37,9 +39,13 @@ class NewUser extends Component {
                 });
                 break;
             case "years":
-                this.setState({
-                    years: parseInt(e.target.value),
-                });
+                e.target.value !== '' ?
+                    this.setState({
+                        years: parseInt(e.target.value),
+                    }) :
+                    this.setState({
+                        years: '',
+                    });
                 break;
             default:
                 break;

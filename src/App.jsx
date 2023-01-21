@@ -30,9 +30,11 @@ export default class App extends React.Component {
 
     handleAddUser = (addedUser) => {
         const { users } = this.state;
+
         this.setState({
             users: [...users, addedUser]
         });
+
     };
 
     render() {
